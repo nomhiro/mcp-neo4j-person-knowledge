@@ -1,0 +1,36 @@
+UNWIND [
+{ relationType: "RELATES_TO", source: "制御設計", target: "ソフトウェア設計" },
+{ relationType: "RELATES_TO", source: "Excel処理", target: "ファイル入出力" },
+{ relationType: "RELATES_TO", source: "Excel処理", target: "ExcelVBA" },
+{ relationType: "RELATES_TO", source: "RPA", target: "業務自動化" },
+{ relationType: "RELATES_TO", source: "データベース設計", target: "DB運用" },
+{ relationType: "RELATES_TO", source: "PowerAutomate", target: "業務自動化" },
+{ relationType: "RELATES_TO", source: "データ可視化", target: "数値計算" },
+{ relationType: "RELATES_TO", source: "Matlab", target: "数値計算" },
+{ relationType: "RELATES_TO", source: "Python", target: "機械学習" },
+{ relationType: "RELATES_TO", source: "Python", target: "データパイプライン" },
+{ relationType: "RELATES_TO", source: "テスト設計", target: "テスト計画" },
+{ relationType: "RELATES_TO", source: "設計レビュー", target: "レビュー" },
+{ relationType: "RELATES_TO", source: "フロントエンド", target: "UI設計" },
+{ relationType: "RELATES_TO", source: "フロントエンド開発", target: "Redux" },
+{ relationType: "RELATES_TO", source: "フロントエンド", target: "バックエンド" },
+{ relationType: "RELATES_TO", source: "REST API設計", target: "API統合" },
+{ relationType: "RELATES_TO", source: "DX", target: "業務改革" },
+{ relationType: "RELATES_TO", source: "クラウド", target: "クラウド運用" },
+{ relationType: "RELATES_TO", source: "CI/CD", target: "DevOps" },
+{ relationType: "RELATES_TO", source: "AI検索", target: "日本語NLP" },
+{ relationType: "RELATES_TO", source: "AIモデル開発", target: "機械学習" },
+{ relationType: "RELATES_TO", source: "UI設計", target: "UX" },
+{ relationType: "RELATES_TO", source: "scrum", target: "アジャイル" },
+{ relationType: "RELATES_TO", source: "プロジェクト管理", target: "チームビルディング" },
+{ relationType: "RELATES_TO", source: "レビュー", target: "標準化" },
+{ relationType: "RELATES_TO", source: "データ変換", target: "データ整形" },
+{ relationType: "RELATES_TO", source: "データパイプライン", target: "データ変換" },
+{ relationType: "RELATES_TO", source: "AI検索", target: "データ分析" },
+{ relationType: "RELATES_TO", source: "ExcelVBA", target: "Excel自動化" },
+{ relationType: "RELATES_TO", source: "DB設計", target: "クラウド" },
+{ relationType: "RELATES_TO", source: "UI設計", target: "画面設計" }
+] AS rel
+MATCH (s { name: rel.source })
+MATCH (t { name: rel.target })
+MERGE (s)-[r:RELATES_TO]->(t);
