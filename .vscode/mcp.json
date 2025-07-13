@@ -11,6 +11,14 @@
         "--password",
         "mypassword"
       ]
+    },
+    "customer-voice": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "http://localhost:7071/runtime/webhooks/mcp/sse"
+      ]
     }
   }
 }
